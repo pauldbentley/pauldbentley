@@ -1,0 +1,19 @@
+baseURL: 'https://www.paulbentley.co.uk'
+languageCode: 'en-GB'
+title: 'Paul Bentley'
+theme: 'ananke'
+
+publishDir: "_site"
+
+module:
+  mounts:
+    - source: src/assets
+      target: assets
+    - source: src/content
+      target: content
+    - source: src/data
+      target: data
+    - source: src/layouts
+      target: layouts
+    - source: src/static
+      target: static
