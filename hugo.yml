@@ -8,11 +8,42 @@ module:
   mounts:
     - source: src/assets
       target: assets
-    - source: src/data
-      target: data
     - source: src/layouts
       target: layouts
     - source: src/static
       target: static
     - source: node_modules/bootstrap/scss
       target: assets/scss/bootstrap
+    - source: node_modules/@fortawesome/fontawesome-free/css
+      target: static/assets/fontawesome/css
+    - source: node_modules/@fortawesome/fontawesome-free/webfonts
+      target: static/assets/fontawesome/webfonts
+    
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
+      wrapStandAloneImageWithinParagraph: false
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    hl_inline: false
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    noHl: false
+    style: doom-one
+    tabWidth: 4
+
+params:
+  social:
+    twitter: pauldbentley
+
+pagination:
+  pagerSize: 6

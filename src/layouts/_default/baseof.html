@@ -2,21 +2,16 @@
 <html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 <head>
   {{ partial "head.html" . }}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     {{ partial "header.html" . }}
+    {{ block "header" . }}{{ end }}
   </header>
-  <div class="container">
-    <main>
-      {{ block "main" . }}{{ end }}
-    </main>
-  </div>
-  <footer>
+  {{ block "main" . }}{{ end }}
+  <footer class="p-5 text-white bg-dark">
     {{ partial "footer.html" . }}
   </footer>
+  <img src="/assets/img/grunge-7084937.svg" class="position-absolute top-0 start-50 w-75 translate-middle z-n1 d-none" style="opacity: 0.1;">
 </body>
 </html>

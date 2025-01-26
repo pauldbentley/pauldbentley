@@ -1,12 +1,46 @@
 {{ define "main" }}
-  <div class="offset-xl-1 col-xl-10">
-    <h1 class="display-1 text-center">{{ .Title }}</h1>
+    <main class="d-flex justify-content-center">
+        <article class="post my-5 mx-4 px-md-5 mx-md-5">
+            <header class="vstack gap-3 mb-3">
+                <div class="text-center m-auto">
+                    <h1 class="display-1 text-uppercase">{{ .Title }}</h1>
+                </div>
 
-    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-    {{ $dateHuman := .Date | time.Format ":date_long" }}
-    <time class="d-block text-center text-uppercase text-body-secondary" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+                {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+                {{ $dateHuman := .Date | time.Format ":date_long" }}
+                <time class="d-block text-center text-uppercase text-body-secondary small" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+            
+                {{- $image := "" }}
+                {{- $images := partial "_funcs/get-page-images" . }}
+                {{- with index $images 0 }}
+                    {{- $image = transform.Markdownify (delimit (slice "![" $.Title "](" .RelPermalink ")") "") }}
+                {{ end }}
 
-    {{ replace .Content "<p>" "<p class=\"lead\">" 1 | safeHTML }}
-    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-  </div>
+            {{ .Content | replaceRE "^<p>(.*?)</p>" (delimit (slice "<p class=\"lead text-center\">$1</p>" $image "</header>") "") | safeHTML }}
+        </article>
+    </main>
+
+    <section class="bg-white text-secondary border-top p-3 p-md-0">
+        <div class="hstack flex-wrap align-items-stretch">
+            <div class="prev-post order-2 order-md-1 col-md-6 text-md-end p-3 p-md-5">
+                {{ $prev := .Prev }}
+                {{ if $prev }}
+                <article class="p-md-3">
+                    <h6 class="text-uppercase">Previous Post</h6>
+                    <a href="{{ $prev.Permalink }}" class="fs-4 text-secondary text-decoration-none">{{ $prev.Title }}</a>
+                </article>
+                {{ end }}
+            </div>
+
+            {{ $next := .Next }}
+            {{ if $next }}
+                <div class="next-post order-1 order-md-2 col-md-6 p-3 p-md-5">
+                <article class="p-md-3">
+                    <h6 class="text-uppercase">Next Post</h6>
+                    <a href="{{ $next.Permalink }}" class="fs-4 text-secondary text-decoration-none">{{ $next.Title }}</a>
+                </article>
+                </div>
+            {{ end }}
+        </div>        
+    </section>
 {{ end }}
