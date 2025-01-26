@@ -1,0 +1,39 @@
+{{ define "header"}}
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+{{ end }}
+
+{{ define "main" }}
+  <header class="text-center m-5">
+    <h1 class="text-center display-1 text-uppercase mx-md-n5 mb-0">{{ .Title }}</h1>
+    {{ .Content | replaceRE "^<p>" "<p class=\"lead\">" | safeHTML }}
+  </header>
+  <main class="container gx-0 overflow-hidden mb-1">
+    <div class="row g-1" data-masonry='{"percentPosition": true }'>
+      {{ range .Paginator.Pages }}
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format ":date_long" }}
+      {{- $images := partial "_funcs/get-page-images" . }}
+        <div class="col-md-6">
+          <div class="card rounded-0 border-0">
+            <div class="card-body p-5 bg-white">
+              <div class="text-body-secondary text-center" datetime="{{ $dateMachine }}">{{ $dateHuman }}</div>
+              <h3 class="card-title text-center mx-5 my-3">{{ .LinkTitle }}</h3>
+
+              {{- with index $images 0 }}
+                <div class="card-img-container my-5">
+                  <img src="{{ .RelPermalink }}" class="shadow">
+                </div>
+              {{ end }}
+
+              <p class="card-text lead mb-4">{{ .Summary | plainify }}</p>
+              <div class="text-center"><a href="{{ .RelPermalink }}" class="btn btn-outline-dark btn-sm stretched-link text-uppercase">Read more</a></div>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </main>
+  <section class="bg-white p-5 hstack justify-content-center">
+    {{ partial "pagination.html" . }}
+  </section>
+{{ end }}

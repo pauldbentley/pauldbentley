@@ -1,8 +1,17 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+<main class="d-flex justify-content-center">
+  <article class="post my-5 mx-4 px-md-5 mx-md-5">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    {{ range .Paginator.Pages }}
+      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      <p>{{ .Summary | plainify }}</p>
+    {{ end }}
+  </article>
+</main>
+
+<section class="bg-white p-5 hstack justify-content-center">
+  {{ partial "pagination.html" . }}
+</section>
+
 {{ end }}

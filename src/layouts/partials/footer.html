@@ -1,1 +1,21 @@
-<p>Copyright {{ now.Year }}. All rights reserved.</p>
+<div class="container small">
+    <div class="row">
+        <div class="col-md-4">
+            <h6 class="text-uppercase">Recent posts</h6>
+            <ul class="list-unstyled">
+            {{ range first 5 .Site.RegularPages }}
+            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+            {{ end }}
+            </ul>
+        </div>
+        <div class="col-md-4 ms-auto">
+            <h6 class="text-uppercase">About me</h6>
+            {{ $footer := .Site.GetPage "footer" }}
+            <div class="text-secondary">
+            {{ $footer.Content }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<p class="text-center small text-secondary mb-0">&copy; Copyright {{ now.Year }} Paul Bentley</p>
