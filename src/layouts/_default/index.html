@@ -15,17 +15,17 @@
       {{- $images := partial "_funcs/get-page-images" . }}
         <div class="col-md-6">
           <div class="card rounded-0 border-0">
-            <div class="card-body p-5 bg-white">
+            <div class="card-body p-4 p-md-5 bg-white">
               <div class="text-body-secondary text-center" datetime="{{ $dateMachine }}">{{ $dateHuman }}</div>
-              <h3 class="card-title text-center mx-5 my-3">{{ .LinkTitle }}</h3>
+              <h3 class="card-title text-center mx-md-5 my-md-3">{{ .LinkTitle }}</h3>
 
               {{- with index $images 0 }}
-                <div class="card-img-container my-5">
+                <div class="card-img-container my-md-5 mb-3">
                   <img src="{{ .RelPermalink }}" class="shadow">
                 </div>
               {{ end }}
 
-              <p class="card-text lead mb-4">{{ .Summary | plainify }}</p>
+              <p class="card-text lead mb-3 mb-md-4">{{ .Summary | plainify }}</p>
               <div class="text-center"><a href="{{ .RelPermalink }}" class="btn btn-outline-dark btn-sm stretched-link text-uppercase">Read more</a></div>
             </div>
           </div>
