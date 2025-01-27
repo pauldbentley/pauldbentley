@@ -1,6 +1,6 @@
 ---
 title: 'Foundational C# certification at freeCodeCamp'
-summary: 'This is a great free course for anyone wanting to learn the fundamentals of C#.'
+summary: 'This is a great free course for anyone wanting to learn the fundamentals of .NET programming in C#.'
 date: 2023-10-15T10:00:00-07:00
 draft: false
 categories:
