@@ -1,5 +1,6 @@
 {{ define "header"}}
-<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 {{ end }}
 
 {{ define "main" }}
@@ -8,7 +9,7 @@
     {{ .Content | replaceRE "^<p>" "<p class=\"lead\">" | safeHTML }}
   </header>
   <main class="container gx-0 overflow-hidden mb-1">
-    <div class="row g-1" data-masonry='{"percentPosition": true }'>
+    <div class="row g-1 masonry">
       {{ range .Paginator.Pages }}
       {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
       {{ $dateHuman := .Date | time.Format ":date_long" }}
@@ -36,4 +37,14 @@
   <section class="bg-white p-5 hstack justify-content-center">
     {{ partial "pagination.html" . }}
   </section>
+
+  <script>
+    imagesLoaded(document.querySelector('.masonry'), (instance) => {
+      console.dir(instance);
+      
+      var msnry = new Masonry(instance.elements[0], {
+        percentPosition: true
+      });
+    });
+  </script>
 {{ end }}
