@@ -9,7 +9,7 @@
     {{ .Content | replaceRE "^<p>" "<p class=\"lead\">" | safeHTML }}
   </header>
   <main class="container gx-0 overflow-hidden mb-1">
-    <div class="row g-1 masonry" data-masonry2='{"percentPosition": true }'>
+    <div class="row g-1 masonry">
       {{ range .Paginator.Pages }}
       {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
       {{ $dateHuman := .Date | time.Format ":date_long" }}
