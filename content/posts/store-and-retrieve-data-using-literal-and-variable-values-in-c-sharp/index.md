@@ -9,7 +9,7 @@ tags:
     - freecodecamp-csharp
 ---
 
-This question introduces data types in C# and how you can assign variables to different values.
+C# is a strongly types language where each variable has a defined type which can be assigned to different values.
 
 <!--more-->
 

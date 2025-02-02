@@ -9,7 +9,7 @@ tags:
     - freecodecamp-csharp
 ---
 
-This question looks at how to format a string using string interpolation.
+Learn about interpolated strings in c# and how to use them to format strings.
 
 <!--more-->
 
