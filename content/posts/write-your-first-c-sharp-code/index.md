@@ -9,7 +9,7 @@ tags:
     - freecodecamp-csharp
 ---
 
-This question looks at the static Console class to understand the differences between two methods.
+The console class has a Write() and WriteLine() method, this challengs helps to understand the differences between them.
 
 <!--more-->
 
