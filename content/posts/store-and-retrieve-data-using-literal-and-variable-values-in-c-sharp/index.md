@@ -9,7 +9,7 @@ tags:
     - freecodecamp-csharp
 ---
 
-C# is a strongly types language where each variable has a defined type which can be assigned to different values.
+C# is a strongly typed language where each variable has a defined type which can be assigned to different values.
 
 <!--more-->
 
