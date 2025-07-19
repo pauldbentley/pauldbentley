@@ -21,9 +21,9 @@
               <h3 class="card-title text-center mx-md-5 my-md-3">{{ .LinkTitle }}</h3>
 
               {{- with index $images 0 }}
-                <div class="card-img-container my-md-5 mb-3">
+                <figure class="card-img-container my-md-5 mb-3">
                   <img src="{{ .RelPermalink }}" class="shadow">
-                </div>
+                </figure>
               {{ end }}
 
               <p class="card-text lead mb-3 mb-md-4">{{ .Summary | plainify }}</p>
