@@ -9,7 +9,7 @@ tags:
     - freecodecamp-csharp
 ---
 
-C# is a strongly typed language where each variable has a defined type which can be assigned to different values.
+C# is a strongly typed language, meaning that every variable must be declared with a specific type, and values assigned to it must be compatible with that type.
 
 <!--more-->
 
@@ -17,7 +17,7 @@ C# is a strongly typed language where each variable has a defined type which can
 
 > Which of the following lines of code creates a variable correctly?
 
-Complete this challenge on [freeCodeCamp](https://www.freecodecamp.org/learnfoundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/store-and-retrieve-data-using-literal-and-variable-values-in-c-sharp).
+Try it yourself on [freeCodeCamp](https://www.freecodecamp.org/learnfoundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/store-and-retrieve-data-using-literal-and-variable-values-in-c-sharp).
 
 ## Option 1
 
@@ -25,13 +25,11 @@ Complete this challenge on [freeCodeCamp](https://www.freecodecamp.org/learnfoun
 int x = 12.3m;
 ```
 
-Here we are declaring a variable called `x` with a type of [`int`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types).  The key point to remember is that integers are whole numbers.
+Here, we're declaring a variable `x` of type [`int`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types).  The key point to remember is that `int` is used for **whole numbers** not decimals.
 
-Next we assign `x` to the literal value `12.3m`.  The decimal point signifies that this is a [floating-point numeric type](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types) which can have decimal places. The `m` suffix is the literal for a `decimal` value.
+We're then trying to assign it to the value `12.3m`.  The presence of a decimal point makes this a [floating-point](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types) value, and the `m` suffix is the literal for a `decimal`.
 
-[C# is a strongly typed language](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/) and makes sure that all operations in your code are type safe.  When you declare a variable you can't assign a value not compatible with its declared type.  For example, you can't declare an `int` and assign it a `decimal` value as this would cause data loss which could result in unexpected bugs.
-
-If you tried to compile the code in this example, you would get a compiler error.
+[C# is a strongly typed language](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/) and enforces type safety.  Assigning a `decimal` value to an `int` variable is not allowed as it would lead to data loss. This kind of mismatch causes a **compiler error**.
 
 {{< awesome fa-regular fa-circle-xmark >}} This is incorrect.
 {.text-danger .mb-4 .fw-bold}
@@ -42,11 +40,9 @@ If you tried to compile the code in this example, you would get a compiler error
 decimal x = 12.3m;
 ```
 
-Here we are declaring a variable called `x` with a type of [`decimal`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types).
+Here, we're declaring a variable `x` of type [`decimal`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types) and assign the literal `12.3m`.  The `m` suffix is the literal for a `decimal`.  This tells the compiler this is a decimal, not a double (which would be the default for floating-point literals without a suffix).
 
-Next we assign `x` to the literal value `12.3m`.  The `m` suffix is the literal for a `decimal` value.
-
-{{< awesome fa-regular fa-circle-check >}} This is correct.
+{{< awesome fa-regular fa-circle-check >}} This is the correct answer.
 {.text-success .mb-4 .fw-bold}
 
 ## Option 3
@@ -55,14 +51,18 @@ Next we assign `x` to the literal value `12.3m`.  The `m` suffix is the literal 
 bool x = 'False';
 ```
 
-Here we are declaring a variable called ```x``` with a type of [bool](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool).
-A bool can be assigned the literal value ```true``` and ```false```.
+Here, we're declaring a variable `x` of type [bool](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/bool).
+A bool can can either be `true` or `false`.
 
-Next we assign ```x``` to the value ```'False'```.
-The single quote characters here indicate this is a [char](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/char) type.
-A char can be assigned to a single character.
+Next we assign `x` to the value `'False'` enclosed in **single quotes** which in C# denotes a [char](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/char) (a single character).
 
-If you tried to compile the code in this example, you would get a compiler error.
+Since `'False'` is actually multiple characters, this won't compile either.
+
+If you wanted to assign a `bool` with the value false, you would write:
+
+```csharp
+bool x = false;
+```
 
 {{< awesome fa-regular fa-circle-xmark >}} This is incorrect.
 {.text-danger .mb-4 .fw-bold}

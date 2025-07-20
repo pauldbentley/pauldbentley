@@ -9,7 +9,7 @@ tags:
     - freecodecamp-csharp
 ---
 
-The Console class provides two similar soudning methods: Write() and WriteLine().  This challenge helps you to understand the differences between them.
+The Console class provides two similar sounding methods: Write() and WriteLine().  This challenge helps you to understand the differences between them.
 
 <!--more-->
 
@@ -38,7 +38,7 @@ So the key difference is clear: `WriteLine()` appends a new line after printing,
 
 The documentation does not mention adding a new line for this method.
 
-{{< awesome fa-regular fa-circle-xmark >}} Incorrect.
+{{< awesome fa-regular fa-circle-xmark >}} This is incorrect.
 {.text-danger .mb-4 .fw-bold}
 
 ## Option 2
@@ -47,7 +47,7 @@ The documentation does not mention adding a new line for this method.
 
 This is close, but it actually appends the line terminator _after_ the output.
 
-{{< awesome fa-regular fa-circle-xmark >}} Incorrect.
+{{< awesome fa-regular fa-circle-xmark >}} This is incorrect.
 {.text-danger .mb-4 .fw-bold}
 
 ## Option 3
@@ -56,12 +56,12 @@ This is close, but it actually appends the line terminator _after_ the output.
 
 This matches exactly what the documentation states.
 
-{{< awesome fa-regular fa-circle-check >}} Correct.
+{{< awesome fa-regular fa-circle-check >}} This is the correct answer.
 {.text-success .mb-4 .fw-bold}
 
 ## Thoughts
 
-This example deonstrates an important coding principal; "**Make the Implicit, Explicit**".
+This example demonstrates an important coding principal; "**Make the Implicit, Explicit**".
 
 The C# team could have overloaded the `Console.Write()` with an optional `bool` parameter to control whether a newline should be added. Internally, the method could then decide whether to append a line terminator based on that value.
 
