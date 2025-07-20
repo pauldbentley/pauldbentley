@@ -26,7 +26,7 @@
                 {{ $prev := .Prev }}
                 {{ if $prev }}
                 <article class="p-md-3">
-                    <h6 class="text-uppercase">Previous Post</h6>
+                    <h6 class="text-uppercase opacity-75">Previous Post</h6>
                     <a href="{{ $prev.Permalink }}" class="fs-4 text-secondary text-decoration-none">{{ $prev.Title }}</a>
                 </article>
                 {{ end }}
@@ -36,7 +36,7 @@
             {{ if $next }}
                 <div class="next-post order-1 order-md-2 col-md-6 p-3 p-md-5">
                 <article class="p-md-3">
-                    <h6 class="text-uppercase">Next Post</h6>
+                    <h6 class="text-uppercase opacity-75">Next Post</h6>
                     <a href="{{ $next.Permalink }}" class="fs-4 text-secondary text-decoration-none">{{ $next.Title }}</a>
                 </article>
                 </div>
