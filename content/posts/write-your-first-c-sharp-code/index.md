@@ -9,7 +9,7 @@ tags:
     - freecodecamp-csharp
 ---
 
-The console class has a Write() and WriteLine() method, this challengs helps to understand the differences between them.
+The console provides two similar soudning methods: Write() and WriteLine().  This challenge helps you to understand the differences between them.
 
 <!--more-->
 
@@ -20,7 +20,7 @@ The console class has a Write() and WriteLine() method, this challengs helps to 
 Complete this challenge on [freeCodeCamp](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/write-your-first-c-sharp-code).
 
 ## What do the docs say?
-These methods sound like they are going to write a value to the console, potentially on a new line. Let's have a look at the documentation so see if we can find the differences.
+At first glance, both methods sounds like they are going to write output to the console, with a new line or not.  So what's the actual difference? Let’s consult the documentation:
 
 The [documentation for the Write method](https://learn.microsoft.com/en-us/dotnet/api/system.console.write?view=net-9.0#system-console-write(system-string)) says:
 
@@ -30,42 +30,41 @@ The [documentation for the WriteLine method](https://learn.microsoft.com/en-us/d
 
 > Writes the specified string value, followed by the current line terminator, to the standard output stream.
 
-So the difference looks to be if a new line is added after the value has been written to the console or not.
+So the key difference is clear: `WriteLine()` appends a new line after printing, while `Write()` does not.
 
 ## Option 1
 
 > `Console.Write` prints the output on a new line.
 
-The documentation doesn't say anything about new lines for the this method.
+The documentation does not mention adding a new line for this method.
 
-{{< awesome fa-regular fa-circle-xmark >}} This is incorrect.
+{{< awesome fa-regular fa-circle-xmark >}} Incorrect.
 {.text-danger .mb-4 .fw-bold}
 
 ## Option 2
 
 > `Console.WriteLine` prints the output on a new line.
 
-While the documentation does mention a line terminator, it says the content is output first, then the line terminator.
+This is close, but it actually appends the line terminator _after_ the output.
 
-{{< awesome fa-regular fa-circle-xmark >}} This is incorrect.
+{{< awesome fa-regular fa-circle-xmark >}} Incorrect.
 {.text-danger .mb-4 .fw-bold}
 
 ## Option 3
 
 > `Console.WriteLine` appends a new line after the output.
 
-This is what the documentation says.
+This matches exactly what the documentation states.
 
-{{< awesome fa-regular fa-circle-check >}} This is correct.
+{{< awesome fa-regular fa-circle-check >}} Correct.
 {.text-success .mb-4 .fw-bold}
 
 ## Thoughts
 
-This method is an example of an important coding principal; "Make the Implicit, Explicit".
+This example deonstrates an important coding principal; "**Make the Implicit, Explicit**".
 
-The C# team could have added an overload to the `Console.Write` method with a `bool` parameter to control if the new line is appended or not.
-Then inside the method there would be a check on this value to add the new line or not.
+The C# team could have overloaded the `Console.Write()` with an optional `bool` parameter to control whether a newline should be added. Internally, the method could then decide whether to append a line terminator based on that value.
 
-From a maintenance point of view, this would increase the [Cyclomatic complexity](https://en.wikipedia.org/wiki/Cyclomatic_complexity).
-There are also many overloads to the write method, so this would double the number required.
-From the developers point of view, it's not initially obvious how to write value with a new line without looking at the documentation for all the parameters.
+However, this approach would increase the [cyclomatic complexity](https://en.wikipedia.org/wiki/Cyclomatic_complexity), making it harder to maintain.  Since `Console.Write()` already has many overloads, introducing a flag would effectively double them.  It would also make it less clear to developers how to output text with or without a new line, forcing them to dig into overloads or documentation.
+
+By having two distinct methods the intent remains obvious. This separation helps keep the language clean and the API intuitive.

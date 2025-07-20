@@ -10,15 +10,16 @@ tags:
     - freecodecamp-csharp
 ---
 
-I recently completed this excellent free C# certification on freeCodeCamp.
+I recently completed the Foundational C# with Microsoft certification on freeCodeCamp, and I highly recommend it - especially since it's completely free.
 
-[freeCodeCamp](https://www.freecodecamp.org/) have a large number of free certifications to help you learn to code.  From [Responsive Web Design](https://www.freecodecamp.org/learn/2022/responsive-web-design/) to [Machine Learning with Python](https://www.freecodecamp.org/learn/machine-learning-with-python/).
+[freeCodeCamp](https://www.freecodecamp.org/) have a large number of free certifications to help you learn to code, covering everything from [Responsive Web Design](https://www.freecodecamp.org/learn/2022/responsive-web-design/) to [Machine Learning with Python](https://www.freecodecamp.org/learn/machine-learning-with-python/).
 
-The first course I was interested in was the [Foundational C# with Microsoft](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/).  Even though I've been programming in .NET and C# since it was first released, I thought this would be a good way to validate my knowledge, and maybe learn a few new things along the way.
+The [Foundational C# with Microsoft](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/) course immediately caught my eye.
 
-Also, I have been wanting to create a coding blog for a long time so I thought this would be a good way to generate some content.
+Although I've been working with .NET and C# since initial release, I saw this as a great opportunity validate my existing knowledge, and maybe even pick up some new along the way.
 
-So I have been back through all the questions and put together my thoughts on the possible answers and
-given 
+It also gave me the push I need to finally start something I've been wanting to do for a while - launch a tech blog. This course felt like a great starting point for creating useful, relevant content.
 
-The course involves going to the Microsoft Learn website, before returning to freeCodeCamp to answer a question based on something you have just learned.
+ I've gone back through all the certification questions and written up my thoughts, including insights into the possible answers and guidance on how to approach solving them.
+
+The course itself is structured around content hosted on the Microsoft Learn platform. After completing each lesson there, you return to freeCodeCamp to answer a related question, reinforcing what you’ve just learned in a practical way.
