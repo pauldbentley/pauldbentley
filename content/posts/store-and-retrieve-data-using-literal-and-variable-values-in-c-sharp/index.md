@@ -17,7 +17,7 @@ C# is a strongly typed language, meaning that every variable must be declared wi
 
 > Which of the following lines of code creates a variable correctly?
 
-Try it yourself on [freeCodeCamp](https://www.freecodecamp.org/learnfoundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/store-and-retrieve-data-using-literal-and-variable-values-in-c-sharp).
+Try to answer this question first on [freeCodeCamp](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/store-and-retrieve-data-using-literal-and-variable-values-in-c-sharp).
 
 ## Option 1
 

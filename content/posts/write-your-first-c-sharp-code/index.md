@@ -17,7 +17,7 @@ The Console class provides two similar sounding methods: Write() and WriteLine()
 
 > What is the difference between `Console.Write` and `Console.WriteLine`?
 
-Complete this challenge on [freeCodeCamp](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/write-your-first-c-sharp-code).
+Try to answer this question first on [freeCodeCamp](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/write-your-first-c-sharp-code).
 
 ## What do the docs say?
 At first glance, both methods sounds like they are going to write output to the console, with a new line or not.  So what's the actual difference? Let’s consult the documentation:

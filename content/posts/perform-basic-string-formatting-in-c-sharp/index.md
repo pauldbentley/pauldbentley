@@ -9,12 +9,14 @@ tags:
     - freecodecamp-csharp
 ---
 
-Learn about interpolated strings in c# and how to use them to format strings.
+Learn how to use interpolated strings in C# to format output in a clean and readable way.
 
 <!--more-->
 
 ## Question
-> Which of the following lines of code correctly uses string interpolation assuming that the variable value is a string?
+> Which of the following lines of code correctly uses string interpolation assuming that the variable `value` is a string?
+
+Try to answer this question first on [freeCodeCamp](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/perform-basic-string-formatting-in-c-sharp).
 
 ## Option 1
 
@@ -22,11 +24,14 @@ Learn about interpolated strings in c# and how to use them to format strings.
 Console.WriteLine(@"My value: {value}");
 ```
 
-The ```@``` character at the start of the string indicates this is a [verbatim string](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/verbatim).  This means anything inside the string is interpreted literally.
+The `@` symbol indicates a [verbatim string](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/verbatim), which means any content inside the string is treated literally.
 
-So the command above would write ```My value: {value}``` to the console. 
+**Output:**
+```cmd
+My value: {value}
+```
 
-{{< awesome fa-regular fa-circle-xmark >}} This is incorrect.
+{{< awesome fa-regular fa-circle-xmark >}} Incorrect - this does **not** perform string interpolation.
 {.text-danger .mb-4 .fw-bold}
 
 ## Option 2
@@ -35,11 +40,15 @@ So the command above would write ```My value: {value}``` to the console.
 Console.WriteLine($"My value: {value}");
 ```
 
-The ```$``` character at the start of the string indicates this is an [interpolated string](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated).  When an interpolated string is processed into the final string, the compiler will replace anything inside ```{}``` with the result of the expression.
+The `$` symbol indicates this is an [interpolated string](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated).  Expressions inside `{}` are evaluated and inserted into the string.
 
-Let's say we have set the value of ```value``` to ```"The value"```.  The command above would write ```My value: The value``` to the console. 
+Assuming `value = "The value"`, the output would be:
 
-{{< awesome fa-regular fa-circle-check >}} This is the correct answer.
+```cmd
+My value: The value
+```
+
+{{< awesome fa-regular fa-circle-check >}} Correct - this is an example of string interpolation in C#.
 {.text-success .fw-bold}
 
 ## Option 3
@@ -48,9 +57,12 @@ Let's say we have set the value of ```value``` to ```"The value"```.  The comman
 Console.WriteLine(@"My value: [value]");
 ```
 
-The ```@``` character at the start of the string indicates this is a [verbatim string](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/verbatim).  This means anything inside the string is interpreted literally.
+Again, this is a [verbatim string](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/verbatim) like in option 1.  The brackets `[]` are not used for interpolation in C#. Everything inside is printed exactly as written.
 
-So the command above would write ```My value: [value]``` to the console. 
+**Output:**
+```cmd
+My value: [value]
+```
 
-{{< awesome fa-regular fa-circle-xmark >}} This is incorrect.
+{{< awesome fa-regular fa-circle-xmark >}} Incorrect – this does not use interpolation.
 {.text-danger .mb-4 .fw-bold}
