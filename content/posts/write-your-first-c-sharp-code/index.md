@@ -9,7 +9,7 @@ tags:
     - freecodecamp-csharp
 ---
 
-The console provides two similar soudning methods: Write() and WriteLine().  This challenge helps you to understand the differences between them.
+The Console class provides two similar soudning methods: Write() and WriteLine().  This challenge helps you to understand the differences between them.
 
 <!--more-->
 
