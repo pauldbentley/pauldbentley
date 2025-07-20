@@ -39,7 +39,7 @@ The ```$``` character at the start of the string indicates this is an [interpola
 
 Let's say we have set the value of ```value``` to ```"The value"```.  The command above would write ```My value: The value``` to the console. 
 
-{{< awesome fa-regular fa-circle-check >}} This is correct.
+{{< awesome fa-regular fa-circle-check >}} This is the correct answer.
 {.text-success .fw-bold}
 
 ## Option 3
