@@ -1,7 +1,0 @@
-<figure>
-  <img src="{{ .Destination | safeURL }}" class="img-fluid w-100 shadow"
-    {{- with .Text }} alt="{{ . }}"{{ end -}}
-    {{- with .Title }} title="{{ . }}"{{ end -}}
-  >
-  {{- /* chomp trailing newline */ -}}
-</figure>
